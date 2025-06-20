@@ -179,50 +179,6 @@ class ResolveurBFS:
             print(ligne)
             print("+" + "-+" * self.largeur)
         print(f"Longueur du chemin: {len(self.chemin_solution)} cases")
-```
 
-## Intégration avec les autres modules
 
-1. **Compatibilité avec `maze_model.py` (Module 1)**:
-   - Utilise les méthodes `contient_mur()` pour vérifier les murs
-   - Suppose que le labyrinthe a des attributs `largeur` et `hauteur`
 
-2. **Pour le contrôleur principal (Module 5)**:
-   ```python
-   # Exemple d'utilisation dans game_controller.py
-   from bfs_solver_visualizer import ResolveurBFS
-   
-   def resoudre_bfs(labyrinthe, depart, arrivee):
-       resolveur = ResolveurBFS(labyrinthe)
-       chemin = resolveur.resoudre(depart, arrivee)
-       if chemin:
-           print("Solution trouvée par BFS!")
-           resolveur._afficher_solution()
-       else:
-           print("Aucun chemin trouvé.")
-       return chemin
-   ```
-
-3. **Visualisation optionnelle**:
-   ```python
-   # Pour une visualisation pas à pas
-   resolveur.visualiser_recherche(depart, arrivee, pas_a_pas=True)
-   ```
-
-## Points clés de cette implémentation
-
-1. **Conventions françaises**:
-   - Noms de variables et méthodes en français
-   - Documentation en français
-   - Respect des bonnes pratiques PEP8
-
-2. **Fonctionnalités complètes**:
-   - Résolution BFS standard
-   - Visualisation étape par étape
-   - Affichage clair du chemin solution
-
-3. **Extensibilité**:
-   - Facile à intégrer avec une interface graphique future
-   - Possibilité d'ajouter des animations
-
-Cette implémentation correspond bien aux spécifications du projet tout en restant claire et maintenable
